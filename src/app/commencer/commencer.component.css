@@ -1,0 +1,147 @@
+.section-commencer {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #d9e1ff 0%, #f0f2ff 100%);
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section-commencer h1 {
+    font-size: 3em;
+    color: #2c2c54;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    text-shadow: 2px 2px 8px rgba(107, 72, 255, 0.2);
+    animation: slideDown 1s ease-out;
+  }
+  
+  .section-commencer .sous-titre {
+    font-size: 1.3em;
+    color: #4a4a67;
+    margin-bottom: 50px;
+    animation: fadeIn 1.5s ease-out 0.5s backwards;
+  }
+  
+  .cartes-parcours {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .carte {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(107, 72, 255, 0.15);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carte:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(107, 72, 255, 0.3);
+  }
+  
+  .carte .icone {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: #eef2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  
+  .carte:hover .icone {
+    background: #6b48ff;
+  }
+  
+  .carte .icone svg {
+    width: 40px;
+    height: 40px;
+    stroke: #6b48ff;
+    transition: stroke 0.3s ease;
+  }
+  
+  .carte:hover .icone svg {
+    stroke: #ffffff;
+  }
+  
+  .carte h2 {
+    font-size: 1.8em;
+    color: #2c2c54;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .carte p {
+    font-size: 1.1em;
+    color: #4a4a67;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  .bouton-parcours {
+    background: linear-gradient(90deg, #6b48ff, #8a5cff);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(107, 72, 255, 0.2);
+  }
+  
+  .bouton-parcours:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(107, 72, 255, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+    .section-commencer {
+      padding: 50px 15px;
+    }
+    .section-commencer h1 {
+      font-size: 2.5em;
+    }
+    .section-commencer .sous-titre {
+      font-size: 1.1em;
+    }
+    .cartes-parcours {
+      grid-template-columns: 1fr;
+    }
+    .carte {
+      padding: 20px;
+    }
+    .carte h2 {
+      font-size: 1.6em;
+    }
+    .carte p {
+      font-size: 1em;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }

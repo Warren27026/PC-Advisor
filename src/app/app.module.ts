@@ -9,6 +9,7 @@ import { CarrouselComponent } from './carrousel/carrousel.component';
 import { PieddepageComponent } from './pieddepage/pieddepage.component';
 import { ContactComponent } from './contact/contact.component';
 import { AProposComponent } from './a-propos/a-propos.component';
+import { CommencerComponent } from './commencer/commencer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AProposComponent } from './a-propos/a-propos.component';
     CarrouselComponent,
     ContactComponent,
     HeroComponent,
-    AProposComponent
+    AProposComponent,
+    CommencerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
