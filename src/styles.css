@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f2ff, #e0e6ff);
+    overflow-x: hidden;
+  }
+  
+  .conteneur-principal {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    animation: fadeInPage 1.5s ease-out;
+  }
+  
+  app-entete {
+    flex: 0 0 60px;
+  }
+  
+  app-hero {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  app-carrousel {
+    flex: 1 0 400px;
+    min-height: 400px;
+  }
+  
+  app-pieddepage {
+    flex: 0 0 50px;
+  }
+  
+  @media (max-width: 768px) {
+    .conteneur-principal {
+      height: auto;
+    }
+    app-hero {
+      padding: 30px 10px;
+    }
+    app-carrousel {
+      flex: 1 0 300px;
+      min-height: 300px;
+    }
+  }
+  
+  @keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }

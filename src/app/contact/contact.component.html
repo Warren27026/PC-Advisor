@@ -1,0 +1,54 @@
+<div class="conteneur-contact">
+    <h1>Nous Contacter</h1>
+    <p>Vous avez une question ou besoin d'aide ? Remplissez le formulaire ci-dessous, et nous vous répondrons rapidement.</p>
+    
+    <form class="formulaire-contact" (ngSubmit)="soumettreFormulaire()">
+      <div class="champ-formulaire">
+        <label for="nom">Nom</label>
+        <input 
+          type="text" 
+          id="nom" 
+          name="nom" 
+          [(ngModel)]="contactForm.nom" 
+          placeholder="Votre nom" 
+          required>
+      </div>
+  
+      <div class="champ-formulaire">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="contactForm.email" 
+          placeholder="Votre email" 
+          required>
+      </div>
+  
+      <div class="champ-formulaire">
+        <label for="sujet">Sujet</label>
+        <input 
+          type="text" 
+          id="sujet" 
+          name="sujet" 
+          [(ngModel)]="contactForm.sujet" 
+          placeholder="Sujet de votre message" 
+          required>
+      </div>
+  
+      <div class="champ-formulaire">
+        <label for="message">Message</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          [(ngModel)]="contactForm.message" 
+          placeholder="Votre message" 
+          rows="5" 
+          required></textarea>
+      </div>
+  
+      <button type="submit" [disabled]="!contactForm.nom || !contactForm.email || !contactForm.sujet || !contactForm.message">
+        Envoyer
+      </button>
+    </form>
+  </div>

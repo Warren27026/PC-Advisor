@@ -1,0 +1,109 @@
+.conteneur-contact {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f9f9f9, #eef2ff);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .conteneur-contact h1 {
+    font-size: 2.8em;
+    color: #2c2c54;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .conteneur-contact p {
+    font-size: 1.3em;
+    color: #4a4a67;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  
+  .formulaire-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .champ-formulaire {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .champ-formulaire label {
+    font-size: 1.1em;
+    color: #2c2c54;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .champ-formulaire input,
+  .champ-formulaire textarea {
+    padding: 12px;
+    font-size: 1em;
+    border: 2px solid #d9e1ff;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .champ-formulaire input:focus,
+  .champ-formulaire textarea:focus {
+    border-color: #6b48ff;
+    box-shadow: 0 0 8px rgba(107, 72, 255, 0.3);
+    outline: none;
+  }
+  
+  .champ-formulaire textarea {
+    resize: vertical;
+  }
+  
+  .formulaire-contact button {
+    padding: 14px 30px;
+    font-size: 1.2em;
+    background: linear-gradient(90deg, #6b48ff, #8a5cff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 12px rgba(107, 72, 255, 0.2);
+  }
+  
+  .formulaire-contact button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  .formulaire-contact button:not(:disabled):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(107, 72, 255, 0.4);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @media (max-width: 768px) {
+    .conteneur-contact {
+      padding: 20px 10px;
+      margin: 10px;
+    }
+    .conteneur-contact h1 {
+      font-size: 2.2em;
+    }
+    .conteneur-contact p {
+      font-size: 1.1em;
+    }
+    .formulaire-contact button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+    }
+  }

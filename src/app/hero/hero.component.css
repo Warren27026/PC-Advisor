@@ -1,0 +1,116 @@
+.section-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f0f2ff, #d9e1ff);
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 1.5s ease-out;
+    background-attachment: fixed;
+  }
+  
+  .section-hero h1 {
+    font-size: 3em;
+    margin-bottom: 25px;
+    color: #2c2c54;
+    font-family: 'Georgia', serif;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-out;
+  }
+  
+  .section-hero p {
+    font-size: 1.4em;
+    color: #4a4a67;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+    animation: fadeIn 1.5s ease-out 0.5s backwards;
+  }
+  
+  .section-hero .boutons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    animation: bounceIn 1.5s ease-out;
+  }
+  
+  .section-hero .boutons button {
+    padding: 14px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 12px rgba(107, 72, 255, 0.2);
+  }
+  
+  .section-hero .boutons button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(107, 72, 255, 0.4);
+  }
+  
+  .section-hero .boutons .bouton-commencer {
+    background: linear-gradient(90deg, #6b48ff, #8a5cff);
+    color: white;
+  }
+  
+  .section-hero .boutons .bouton-savoir-plus {
+    background: transparent;
+    border: 2px solid #6b48ff;
+    color: #6b48ff;
+  }
+  
+  .section-hero:before,
+  .section-hero:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(107, 72, 255, 0.2);
+    animation: pulse 6s infinite;
+  }
+  
+  .section-hero:before {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+  }
+  
+  .section-hero:after {
+    width: 250px;
+    height: 250px;
+    bottom: 5%;
+    right: 5%;
+  }
+  
+  @media (max-width: 768px) {
+    .section-hero h1 { font-size: 2.2em; }
+    .section-hero p { font-size: 1.1em; }
+    .section-hero .boutons { flex-direction: column; gap: 15px; }
+    .section-hero .boutons button { width: 80%; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes bounceIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }

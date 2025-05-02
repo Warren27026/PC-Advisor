@@ -1,0 +1,33 @@
+.conteneur-principal {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Utilisation de min-height au lieu de height pour s'adapter au contenu */
+  }
+  
+  .contenu-principal {
+    flex: 1 0 auto; /* Le contenu principal s'étend, mais laisse de la place pour le pied de page */
+    min-height: 300px; /* Hauteur minimale pour éviter un écrasement */
+    background: #f9f9f9;
+  }
+  
+  app-entete {
+    flex: 0 0 60px;
+  }
+  
+  app-pieddepage {
+    flex: 0 0 50px; /* Hauteur fixe pour le pied de page */
+    background: #6b48ff; /* Couleur pour débogage visuel */
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .conteneur-principal {
+      min-height: auto; /* Adapté aux petits écrans */
+    }
+    .contenu-principal {
+      min-height: 200px;
+    }
+    app-pieddepage {
+      flex: 0 0 40px; /* Ajustement pour mobile */
+    }
+  }

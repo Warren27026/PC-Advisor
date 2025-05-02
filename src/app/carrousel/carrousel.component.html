@@ -1,0 +1,19 @@
+<div class="conteneur-carrousel">
+    <button class="bouton-precedent" (click)="precedent()">❮</button>
+    <div #carrouselContenu class="carrousel-contenu">
+      <div *ngFor="let element of elements; let i = index" class="element-carrousel">
+        <a [href]="element.lien" target="_blank">
+          <img [src]="element.image" [alt]="element.titre">
+        </a>
+        <h3>{{ element.titre }}</h3>
+        <p>{{ element.description }}</p>
+      </div>
+    </div>
+    <button class="bouton-suivant" (click)="suivant()">❯</button>
+    <div class="indicateurs">
+      <span *ngFor="let item of elements; let i = index" 
+            class="indicateur" 
+            [class.actif]="i === indexActuel" 
+            (click)="allerA(i)"></span>
+    </div>
+  </div>

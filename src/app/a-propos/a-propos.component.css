@@ -1,0 +1,100 @@
+.section-a-propos {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f9f9f9, #eef2ff);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 900px;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  .section-a-propos h2 {
+    font-size: 2.8em;
+    color: #2c2c54;
+    margin-bottom: 25px;
+    font-family: 'Georgia', serif;
+    text-shadow: 2px 2px 8px rgba(107, 72, 255, 0.2);
+    animation: slideDown 1s ease-out;
+  }
+  
+  .section-a-propos p {
+    font-size: 1.3em;
+    color: #4a4a67;
+    max-width: 750px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+    animation: fadeIn 1.5s ease-out 0.5s backwards;
+  }
+  
+  .section-a-propos ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .section-a-propos ul li {
+    font-size: 1.2em;
+    color: #4a4a67;
+    position: relative;
+    padding-left: 30px;
+    text-align: left;
+  }
+  
+  .section-a-propos ul li:before {
+    content: '✔'; /* Icône personnalisée (check mark) */
+    color: #6b48ff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  @media (max-width: 768px) {
+    .section-a-propos {
+      padding: 40px 15px;
+      margin: 15px;
+    }
+    .section-a-propos h2 {
+      font-size: 2.2em;
+    }
+    .section-a-propos p {
+      font-size: 1.1em;
+    }
+    .section-a-propos ul li {
+      font-size: 1.1em;
+      padding-left: 25px;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
