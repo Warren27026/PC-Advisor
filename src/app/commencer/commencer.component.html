@@ -1,4 +1,6 @@
 <section class="section-commencer">
+  <!-- Afficher les cartes uniquement si la route principale /commencer est active -->
+  <div *ngIf="isMainCommencerRoute()">
     <h1>Choisissez Votre Parcours</h1>
     <p class="sous-titre">Trois approches différentes pour trouver votre PC idéal</p>
     <div class="cartes-parcours">
@@ -11,7 +13,7 @@
         </div>
         <h2>Pour Débutants</h2>
         <p>Idéal si vous n’avez pas de connaissances techniques. Nous vous guiderons avec des questions simples pour trouver le PC parfait.</p>
-        <button class="bouton-parcours">Commencer</button>
+        <a class="bouton-parcours" routerLink="/commencer/debutants">Commencer</a>
       </div>
       <div class="carte">
         <div class="icone">
@@ -36,4 +38,6 @@
         <button class="bouton-parcours">Commencer</button>
       </div>
     </div>
-  </section>
+  </div>
+  <router-outlet></router-outlet>
+</section>
