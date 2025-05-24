@@ -1,9 +1,14 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+<<<<<<< HEAD
 import { Computer } from '../../models/computer.models';
 import { RecommendationComponent } from '../../recommendation/recommendation.component';
 import computersData from '../../assets/computers.json'; // Import direct du fichier
+=======
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Computer } from '../../models/computer.model';
+>>>>>>> 6160f84ec9276f452bf63a758a4d8a4ea7c1b791
 
 type UsageType = 'gaming' | 'work' | 'study' | 'media';
 type BudgetType = 'low' | 'medium' | 'high';
@@ -37,7 +42,11 @@ interface BudgetRange {
   templateUrl: './debutants.component.html',
   styleUrls: ['./debutants.component.css'],
   standalone: true,
+<<<<<<< HEAD
   imports: [CommonModule, RouterModule, RecommendationComponent] // Retire HttpClientModule
+=======
+  imports: [CommonModule, RouterModule, HttpClientModule]
+>>>>>>> 6160f84ec9276f452bf63a758a4d8a4ea7c1b791
 })
 export class DebutantsComponent implements OnInit {
   currentStep = 1;
@@ -80,6 +89,7 @@ export class DebutantsComponent implements OnInit {
     }
   ];
 
+<<<<<<< HEAD
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
@@ -97,6 +107,30 @@ export class DebutantsComponent implements OnInit {
       this.loadingError = 'Erreur lors du chargement des données. Vérifiez que le fichier computers.json est correctement formaté.';
       console.log('Aucun ordinateur chargé, tableau vide.');
     }
+=======
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    console.log('ngOnInit exécuté - Début du chargement des données');
+    console.log('Tentative de chargement de assets/computers.json');
+    this.http.get<Computer[]>('assets/computers.json').subscribe({
+      next: (data) => {
+        console.log('Données reçues du serveur :', data);
+        this.computers = data || [];
+        console.log('Ordinateurs chargés :', this.computers.length, 'ordinateurs');
+        console.log('Données brutes :', this.computers);
+      },
+      error: (err) => {
+        console.error('Erreur lors du chargement de computers.json :', err);
+        this.computers = [];
+        this.loadingError = 'Erreur lors du chargement des données. Vérifiez que le fichier computers.json est présent dans src/assets.';
+        console.log('Aucun ordinateur chargé, tableau vide.');
+      },
+      complete: () => {
+        console.log('Chargement des données terminé.');
+      }
+    });
+>>>>>>> 6160f84ec9276f452bf63a758a4d8a4ea7c1b791
   }
 
   nextStep() {

@@ -1,4 +1,5 @@
 <div class="debutants-container">
+<<<<<<< HEAD
   <h1>Parcours pour Débutants</h1>
   <p class="sous-titre">Répondez aux questions pour trouver le PC parfait !</p>
 
@@ -26,3 +27,46 @@
     (reset)="reset()">
   </app-recommendation>
 </div>
+=======
+    <h1>Parcours pour Débutants</h1>
+    <p class="sous-titre">Répondez aux questions pour trouver le PC parfait !</p>
+  
+    <div class="progress-bar">
+      <div class="progress" [style.width]="(currentStep / questions.length * 100) + '%'"></div>
+    </div>
+  
+    <div class="question-section" *ngIf="currentStep <= questions.length">
+      <h2>Étape {{ currentStep }} sur {{ questions.length }}</h2>
+      <p>{{ questions[currentStep - 1].text }}</p>
+      <div class="options">
+        <button *ngFor="let option of questions[currentStep - 1].options" 
+                (click)="selectAnswer(currentStep, option.value)" 
+                [class.selected]="isOptionSelected(currentStep, option.value)">
+          {{ option.label }}
+        </button>
+      </div>
+      <button class="bouton-suivant" (click)="nextStep()" [disabled]="!isAnswerSelected()">Suivant</button>
+    </div>
+  
+    <div class="result-section" *ngIf="currentStep > questions.length">
+      <h2>Votre Recommandation</h2>
+      <div *ngIf="loadingError">
+        <p style="color: red;">{{ loadingError }}</p>
+      </div>
+      <div *ngIf="!loadingError">
+        <div *ngIf="recommendation">
+          <p><strong>Marque :</strong> {{ recommendation.marque }}</p>
+          <p><strong>Nom :</strong> {{ recommendation.nom }}</p>
+          <p><strong>Prix :</strong> {{ recommendation.prix }} €</p>
+          <p><strong>RAM :</strong> {{ recommendation.system.ram }} Go</p>
+          <p><strong>CPU :</strong> {{ recommendation.system.cpu.marque }} {{ recommendation.system.cpu.nom }} (Score : {{ recommendation.system.cpu.score }})</p>
+          <p><strong>GPU :</strong> {{ recommendation.system.cg.marque }} {{ recommendation.system.cg.modele }} (Score : {{ recommendation.system.cg.score }})</p>
+        </div>
+        <div *ngIf="!recommendation">
+          <p>Aucun ordinateur ne correspond à vos critères. Essayez d'ajuster vos réponses.</p>
+        </div>
+      </div>
+      <button class="bouton-recommencer" (click)="reset()">Recommencer</button>
+    </div>
+  </div>
+>>>>>>> 6160f84ec9276f452bf63a758a4d8a4ea7c1b791

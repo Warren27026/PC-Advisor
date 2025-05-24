@@ -98,6 +98,7 @@
     text-decoration: none;
     font-size: 1.1em;
     cursor: pointer;
+    text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(107, 72, 255, 0.2);
   }
