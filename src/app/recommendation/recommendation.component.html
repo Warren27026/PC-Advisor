@@ -1,0 +1,20 @@
+<div class="result-section">
+  <h2>Votre Recommandation</h2>
+  <div *ngIf="loadingError">
+    <p style="color: red;">{{ loadingError }}</p>
+  </div>
+  <div *ngIf="!loadingError">
+    <div *ngIf="recommendation">
+      <p><strong>Marque :</strong> {{ recommendation.marque }}</p>
+      <p><strong>Nom :</strong> {{ recommendation.nom }}</p>
+      <p><strong>Prix :</strong> {{ recommendation.prix }} €</p>
+      <p><strong>RAM :</strong> {{ recommendation.system.ram }} Go</p>
+      <p><strong>CPU :</strong> {{ recommendation.system.cpu.marque }} {{ recommendation.system.cpu.nom }} (Score : {{ recommendation.system.cpu.score }})</p>
+      <p><strong>GPU :</strong> {{ recommendation.system.cg.marque }} {{ recommendation.system.cg.modele }} (Score : {{ recommendation.system.cg.score }})</p>
+    </div>
+    <div *ngIf="!recommendation">
+      <p>Aucun ordinateur ne correspond à vos critères. Essayez d'ajuster vos réponses.</p>
+    </div>
+  </div>
+  <button class="bouton-recommencer" (click)="onReset()">Recommencer</button>
+</div>

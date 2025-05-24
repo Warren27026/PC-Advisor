@@ -10,12 +10,14 @@ import { PieddepageComponent } from './pieddepage/pieddepage.component';
 import { ContactComponent } from './contact/contact.component';
 import { AProposComponent } from './a-propos/a-propos.component';
 import { CommencerComponent } from './commencer/commencer.component';
+import { RecommendationComponent } from './recommendation/recommendation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EnteteComponent,
-    PieddepageComponent
+    PieddepageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { CommencerComponent } from './commencer/commencer.component';
     ContactComponent,
     HeroComponent,
     AProposComponent,
+    RecommendationComponent,
     CommencerComponent
   ],
   providers: [],

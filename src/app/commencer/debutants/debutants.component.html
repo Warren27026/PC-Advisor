@@ -1,0 +1,28 @@
+<div class="debutants-container">
+  <h1>Parcours pour Débutants</h1>
+  <p class="sous-titre">Répondez aux questions pour trouver le PC parfait !</p>
+
+  <div class="progress-bar">
+    <div class="progress" [style.width]="(currentStep / questions.length * 100) + '%'"></div>
+  </div>
+
+  <div class="question-section" *ngIf="currentStep <= questions.length">
+    <h2>Étape {{ currentStep }} sur {{ questions.length }}</h2>
+    <p>{{ questions[currentStep - 1].text }}</p>
+    <div class="options">
+      <button *ngFor="let option of questions[currentStep - 1].options" 
+              (click)="selectAnswer(currentStep, option.value)" 
+              [class.selected]="isOptionSelected(currentStep, option.value)">
+        {{ option.label }}
+      </button>
+    </div>
+    <button class="bouton-suivant" (click)="nextStep()" [disabled]="!isAnswerSelected()">Suivant</button>
+  </div>
+
+  <app-recommendation 
+    *ngIf="currentStep > questions.length" 
+    [recommendation]="recommendation" 
+    [loadingError]="loadingError" 
+    (reset)="reset()">
+  </app-recommendation>
+</div>

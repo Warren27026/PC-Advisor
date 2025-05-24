@@ -1,0 +1,130 @@
+.debutants-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #eef2ff, #d9e1ff);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(107, 72, 255, 0.15);
+    text-align: center;
+  }
+  
+  .debutants-container h1 {
+    font-size: 2.5em;
+    color: #2c2c54;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .debutants-container .sous-titre {
+    font-size: 1.2em;
+    color: #4a4a67;
+    margin-bottom: 30px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e0e6f8;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background: #6b48ff;
+    transition: width 0.3s ease;
+  }
+  
+  .question-section h2 {
+    font-size: 1.8em;
+    color: #2c2c54;
+    margin-bottom: 15px;
+  }
+  
+  .question-section p {
+    font-size: 1.1em;
+    color: #4a4a67;
+    margin-bottom: 20px;
+  }
+  
+  .options button {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 12px;
+    background: #ffffff;
+    border: 2px solid #6b48ff;
+    border-radius: 25px;
+    color: #2c2c54;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .options button:hover,
+  .options button.selected {
+    background: #6b48ff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 72, 255, 0.3);
+  }
+  
+  .bouton-suivant,
+  .bouton-recommencer {
+    background: linear-gradient(90deg, #6b48ff, #8a5cff);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .bouton-suivant:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .bouton-suivant:hover:not(:disabled),
+  .bouton-recommencer:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(107, 72, 255, 0.4);
+  }
+  
+  .result-section h2 {
+    font-size: 2em;
+    color: #2c2c54;
+    margin-bottom: 20px;
+  }
+  
+  .result-section p {
+    font-size: 1.2em;
+    color: #4a4a67;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .result-section p strong {
+    color: #2c2c54;
+  }
+  
+  @media (max-width: 768px) {
+    .debutants-container {
+      padding: 30px 15px;
+    }
+    .debutants-container h1 {
+      font-size: 2em;
+    }
+    .options button {
+      width: 90%;
+    }
+    .bouton-suivant,
+    .bouton-recommencer {
+      padding: 10px 25px;
+      font-size: 1em;
+    }
+  }

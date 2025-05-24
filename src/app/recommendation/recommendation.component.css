@@ -1,0 +1,40 @@
+.result-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(107, 72, 255, 0.15);
+  text-align: center;
+}
+
+.result-section h2 {
+  font-size: 2em;
+  color: #2c2c54;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.result-section p {
+  font-size: 1.1em;
+  color: #4a4a67;
+  margin: 10px 0;
+}
+
+.bouton-recommencer {
+  display: inline-block;
+  background: linear-gradient(90deg, #6b48ff, #8a5cff);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+.bouton-recommencer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(107, 72, 255, 0.3);
+}
