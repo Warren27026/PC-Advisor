@@ -1,68 +1,142 @@
 .barre-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, #6b48ff, #8a5cff);
-    padding: 10px 20px;
-    color: white;
-    border-radius: 10px 10px 0 0;
-    height: 60px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #6b48ff, #8a5cff);
+  padding: 15px 30px; /* Augmenté pour un meilleur espacement */
+  color: white;
+  border-radius: 10px 10px 0 0;
+  height: 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: sticky; /* Pour que la barre reste en haut lors du défilement */
+  top: 0;
+  z-index: 1000;
+}
+
+.barre-navigation:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.barre-navigation .logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8em; /* Légèrement plus grand */
+  font-weight: bold;
+  font-family: 'Verdana', sans-serif;
+  background: rgba(255, 255, 255, 0.1); /* Fond subtil pour le logo */
+  padding: 5px 15px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: fadeIn 1s ease-out;
+}
+
+.barre-navigation .logo:hover {
+  transform: scale(1.05); /* Effet de zoom au survol */
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.barre-navigation .logo .icone {
+  margin-right: 12px;
+  font-size: 1.4em; /* Icône plus grande */
+  transition: transform 0.3s ease;
+}
+
+.barre-navigation .logo:hover .icone {
+  transform: rotate(15deg); /* Rotation légère de l'icône au survol */
+}
+
+.barre-navigation .logo span:last-child {
+  letter-spacing: 2px; /* Espacement entre les lettres pour "PC-ADVISOR" */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Ombre pour effet de profondeur */
+}
+
+.barre-navigation .liens-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.barre-navigation .liens-navigation a {
+  color: white;
+  margin-left: 25px; /* Légère augmentation */
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  position: relative; /* Pour l'effet de survol avec un soulignement animé */
+}
+
+.barre-navigation .liens-navigation a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.barre-navigation .liens-navigation a:hover::after {
+  width: 100%; /* Soulignement animé */
+}
+
+.barre-navigation .liens-navigation a:hover {
+  background-color: #5a3de6;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .barre-navigation {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
   }
-  
-  .barre-navigation:hover {
-    transform: translateY(-2px);
-  }
-  
+
   .barre-navigation .logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.6em;
-    font-weight: bold;
-    font-family: 'Verdana', sans-serif;
-    transition: color 0.3s;
+    font-size: 1.5em;
+    margin-bottom: 10px;
   }
-  
+
   .barre-navigation .logo .icone {
-    margin-right: 12px;
     font-size: 1.2em;
+    margin-right: 10px;
   }
-  
+
   .barre-navigation .liens-navigation {
-    display: flex;
-    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
-  
+
   .barre-navigation .liens-navigation a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
+    margin: 5px 10px;
+    padding: 6px 12px;
     font-size: 1.1em;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
   }
-  
-  .barre-navigation .liens-navigation a:hover {
-    background-color: #5a3de6;
-    color: #fff;
-    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .barre-navigation .logo {
+    font-size: 1.3em;
   }
-  
-  @media (max-width: 768px) {
-    .barre-navigation {
-      flex-direction: column;
-      height: auto;
-      padding: 10px;
-    }
-    .barre-navigation .liens-navigation {
-      margin-top: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .barre-navigation .liens-navigation a {
-      margin: 5px 10px;
-      padding: 6px 12px;
-    }
+
+  .barre-navigation .logo .icone {
+    font-size: 1em;
   }
+
+  .barre-navigation .liens-navigation a {
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+}
+
+/* Animation pour le logo */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
