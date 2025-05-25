@@ -1,0 +1,114 @@
+.connaisseurs-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.connaisseurs-container h1 {
+  font-size: 2.5em;
+  color: #2c2c54;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+.sous-titre {
+  font-size: 1.2em;
+  color: #4a4a67;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #6b48ff, #8a5cff);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.question-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(107, 72, 255, 0.15);
+}
+
+.question-section h2 {
+  font-size: 1.5em;
+  color: #2c2c54;
+  margin-bottom: 10px;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.options button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.options button.selected {
+  background: linear-gradient(90deg, #6b48ff, #8a5cff);
+  color: white;
+}
+
+.options button:hover:not(.selected) {
+  background: #d0d0d0;
+  transform: scale(1.05);
+}
+
+.bouton-suivant {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #6b48ff, #8a5cff);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bouton-suivant:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(107, 72, 255, 0.3);
+}
+
+.bouton-suivant:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.bouton-retour {
+  display: inline-block;
+  background: #ccc;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.bouton-retour:hover {
+  background: #bbb;
+}

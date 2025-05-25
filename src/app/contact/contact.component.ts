@@ -18,11 +18,24 @@ export class ContactComponent {
     message: ''
   };
 
+  // Propriété pour gérer l'affichage du message de confirmation
+  showSuccessMessage: boolean = false;
+  successMessage: string = '';
+
   // Méthode pour soumettre le formulaire
   soumettreFormulaire() {
     console.log('Formulaire soumis :', this.contactForm);
-    alert('Merci pour votre message ! Nous vous répondrons bientôt.');
+    
+    // Afficher le message de confirmation
+    this.successMessage = `Merci ${this.contactForm.nom || 'pour votre message'} ! Votre message a été envoyé avec succès. Nous vous répondrons bientôt à ${this.contactForm.email}.`;
+    this.showSuccessMessage = true;
+
     // Réinitialiser le formulaire
     this.contactForm = { nom: '', email: '', sujet: '', message: '' };
+
+    // Masquer le message après 5 secondes
+    setTimeout(() => {
+      this.showSuccessMessage = false;
+    }, 5000);
   }
 }

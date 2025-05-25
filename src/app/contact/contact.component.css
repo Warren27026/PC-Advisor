@@ -1,109 +1,209 @@
-.conteneur-contact {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #f9f9f9, #eef2ff);
-    border-radius: 15px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    animation: fadeIn 1s ease-out;
+.contact-container {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #eef2ff);
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 900px;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.contact-container h1 {
+  font-size: 2.8em;
+  color: #2c2c54;
+  margin-bottom: 25px;
+  font-family: 'Georgia', serif;
+  text-shadow: 2px 2px 8px rgba(107, 72, 255, 0.2);
+  animation: slideDown 1s ease-out;
+}
+
+.sous-titre {
+  font-size: 1.3em;
+  color: #4a4a67;
+  max-width: 750px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+  animation: fadeIn 1.5s ease-out 0.5s backwards;
+}
+
+.success-message {
+  background: #e6ffed;
+  color: #2c2c54;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 0 auto 30px;
+  max-width: 750px;
+  font-size: 1.2em;
+  border-left: 5px solid #28a745;
+  animation: fadeIn 1.5s ease-out 0.5s backwards, slideIn 0.3s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.success-message::before {
+  content: '✔'; /* Icône de coche */
+  font-size: 1.2em;
+  color: #28a745;
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 1.5s ease-out 0.5s backwards;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2em;
+  color: #4a4a67;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #4a4a67;
+  background: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6b48ff;
+  box-shadow: 0 0 8px rgba(107, 72, 255, 0.2);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button {
+  background: linear-gradient(90deg, #6b48ff, #8a5cff);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  margin-top: 10px;
+  animation: fadeIn 1.5s ease-out 0.5s backwards;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(107, 72, 255, 0.3);
+  background: linear-gradient(90deg, #5a3de6, #7a4cef);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 40px 15px;
+    margin: 15px;
   }
-  
-  .conteneur-contact h1 {
-    font-size: 2.8em;
-    color: #2c2c54;
-    font-family: 'Georgia', serif;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+  .contact-container h1 {
+    font-size: 2.2em;
   }
-  
-  .conteneur-contact p {
-    font-size: 1.3em;
-    color: #4a4a67;
-    margin-bottom: 40px;
-    line-height: 1.6;
-  }
-  
-  .formulaire-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .champ-formulaire {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-  
-  .champ-formulaire label {
+
+  .sous-titre {
     font-size: 1.1em;
-    color: #2c2c54;
-    margin-bottom: 8px;
-    font-weight: bold;
   }
-  
-  .champ-formulaire input,
-  .champ-formulaire textarea {
-    padding: 12px;
+
+  .success-message {
+    font-size: 1.1em;
+    padding: 10px 15px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 1.1em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container h1 {
+    font-size: 1.8em;
+  }
+
+  .sous-titre {
     font-size: 1em;
-    border: 2px solid #d9e1ff;
-    border-radius: 8px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
-  
-  .champ-formulaire input:focus,
-  .champ-formulaire textarea:focus {
-    border-color: #6b48ff;
-    box-shadow: 0 0 8px rgba(107, 72, 255, 0.3);
-    outline: none;
+
+  .success-message {
+    font-size: 1em;
   }
-  
-  .champ-formulaire textarea {
-    resize: vertical;
+
+  .form-group label {
+    font-size: 1em;
   }
-  
-  .formulaire-contact button {
-    padding: 14px 30px;
-    font-size: 1.2em;
-    background: linear-gradient(90deg, #6b48ff, #8a5cff);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 4px 12px rgba(107, 72, 255, 0.2);
+
+  button {
+    font-size: 1em;
   }
-  
-  .formulaire-contact button:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    box-shadow: none;
+}
+
+/* Animations réutilisées de section-a-propos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .formulaire-contact button:not(:disabled):hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(107, 72, 255, 0.4);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
   }
-  
-  @media (max-width: 768px) {
-    .conteneur-contact {
-      padding: 20px 10px;
-      margin: 10px;
-    }
-    .conteneur-contact h1 {
-      font-size: 2.2em;
-    }
-    .conteneur-contact p {
-      font-size: 1.1em;
-    }
-    .formulaire-contact button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-    }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

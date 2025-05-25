@@ -1,4 +1,4 @@
-<div class="result-section">
+<!--div class="result-section">
   <h2>Votre Recommandation</h2>
   <div *ngIf="loadingError">
     <p style="color: red;">{{ loadingError }}</p>
@@ -14,6 +14,33 @@
     </div>
     <div *ngIf="!recommendation">
       <p>Aucun ordinateur ne correspond à vos critères. Essayez d'ajuster vos réponses.</p>
+    </div>
+  </div>
+  <button class="bouton-recommencer" (click)="onReset()">Recommencer</button>
+</div-->
+<div class="result-section">
+  <h2>Vos Recommandations</h2>
+  <div *ngIf="loadingError">
+    <p style="color: red;">{{ loadingError }}</p>
+  </div>
+  <div *ngIf="!loadingError" class="recommendations-container">
+    <div *ngIf="!recommendation || recommendation.length === 0">
+      <p>Aucun ordinateur ne correspond à vos critères. Essayez d'ajuster vos réponses.</p>
+    </div>
+    <div *ngIf="recommendation && recommendation.length > 0" class="cards-container">
+      <div class="computer-card" *ngFor="let computer of recommendation">
+        <div class="card-content">
+          <p><strong>Marque :</strong> {{ computer.marque }}</p>
+          <p><strong>Nom :</strong> {{ computer.nom }}</p>
+          <p><strong>Prix :</strong> {{ computer.prix }} €</p>
+          <p><strong>RAM :</strong> {{ computer.system.ram }} Go</p>
+          <p><strong>CPU :</strong> {{ computer.system.cpu.marque }} {{ computer.system.cpu.nom }} (Score : {{ computer.system.cpu.score }})</p>
+          <p><strong>GPU :</strong> {{ computer.system.cg.marque }} {{ computer.system.cg.modele }} (Score : {{ computer.system.cg.score }})</p>
+        </div>
+        <div class="card-availability">
+          <p>Présent en boutique</p>
+        </div>
+      </div>
     </div>
   </div>
   <button class="bouton-recommencer" (click)="onReset()">Recommencer</button>

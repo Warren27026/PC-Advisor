@@ -1,7 +1,7 @@
-<div class="debutants-container">
- <button class="bouton-retour" routerLink="/commencer">Retour</button>
-  <h1>Parcours pour Débutants</h1>
-  <p class="sous-titre">Répondez aux questions pour trouver le PC parfait !</p>
+<div class="educatif-container">
+  <button class="bouton-retour" routerLink="/commencer">Retour</button>
+  <h1>Parcours Éducatif</h1>
+  <p class="sous-titre">Apprenez tout en trouvant le PC idéal !</p>
 
   <div class="progress-bar">
     <div class="progress" [style.width]="(currentStep / questions.length * 100) + '%'"></div>
@@ -9,6 +9,7 @@
 
   <div class="question-section" *ngIf="currentStep <= questions.length">
     <h2>Étape {{ currentStep }} sur {{ questions.length }}</h2>
+    <p class="educational-text">{{ questions[currentStep - 1].educationalText }}</p>
     <p>{{ questions[currentStep - 1].text }}</p>
     <div class="options">
       <button *ngFor="let option of questions[currentStep - 1].options" 

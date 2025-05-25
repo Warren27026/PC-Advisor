@@ -11,12 +11,16 @@ import { ContactComponent } from './contact/contact.component';
 import { AProposComponent } from './a-propos/a-propos.component';
 import { CommencerComponent } from './commencer/commencer.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
+import { ConnaisseursComponent } from './commencer/connaisseurs/connaisseurs.component';
+import { EducatifComponent } from './commencer/educatif/educatif.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EnteteComponent,
     PieddepageComponent,
+    
+    
     
   ],
   imports: [
@@ -28,7 +32,8 @@ import { RecommendationComponent } from './recommendation/recommendation.compone
     HeroComponent,
     AProposComponent,
     RecommendationComponent,
-    CommencerComponent
+    CommencerComponent,
+    EducatifComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
