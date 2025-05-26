@@ -1,13 +1,33 @@
 <header class="barre-navigation">
-    <!-- Logo -->
-    <div class="logo">
-      <span class="icone"><a routerLink="/accueil">🖥️</a></span>
-      <span>PC-ADVISOR</span>
-    </div>
-    <!-- Liens de navigation -->
-    <nav class="liens-navigation">
-      <a routerLink="/accueil">Accueil</a>
-      <a routerLink="/a-propos">À Propos</a>
-      <a routerLink="/contact">Contact</a> <!-- Lien ajouté pour la page Contact -->
-    </nav>
-  </header>
+  <!-- Logo -->
+  <div class="logo">
+    <svg class="icone" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Écran -->
+      <rect x="4" y="2" width="20" height="14" rx="2" ry="2" fill="url(#screenGradient)" />
+      <!-- Clavier -->
+      <rect x="4" y="18" width="20" height="4" rx="1" ry="1" fill="url(#keyboardGradient)" />
+      <!-- Ligne de base -->
+      <line x1="4" y1="22" x2="24" y2="22" stroke-opacity="0.8" />
+      <!-- "Activité" (petite LED ou point lumineux) -->
+      <circle class="boot-up" cx="14" cy="9" r="1.5" fill="#ffffff" />
+      <!-- Définitions des dégradés -->
+      <defs>
+        <linearGradient id="screenGradient" x1="4" y1="2" x2="24" y2="16" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#ffffff" stop-opacity="0.3" />
+          <stop offset="1" stop-color="#ffffff" stop-opacity="0.1" />
+        </linearGradient>
+        <linearGradient id="keyboardGradient" x1="4" y1="18" x2="24" y2="22" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#ffffff" stop-opacity="0.2" />
+          <stop offset="1" stop-color="#ffffff" stop-opacity="0.05" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <span>PC-ADVISOR</span>
+  </div>
+  <!-- Liens de navigation -->
+  <nav class="liens-navigation">
+    <a routerLink="/accueil">Accueil</a>
+    <a routerLink="/a-propos">À Propos</a>
+    <a routerLink="/contact">Contact</a>
+  </nav>
+</header>
